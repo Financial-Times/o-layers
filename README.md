@@ -6,6 +6,7 @@ This module provides a namespace for managing modules that make use of the z-axi
 
 * **Layer** refers to the owned DOM, or portion of owned DOM, of any module that makes use of the z-axis
 * **Layer context** refers to an area of the DOM defining a context for layers (as defined below under `o-layers__classes`)
+
 ## Classes
 
 ### `o-layers__context`
