@@ -27,15 +27,15 @@ The following custom events *must* be fired on a layer's closest ancestor with t
 * *animationDelay* - Any delay between firing the event and cmpletion of the layer's state change as a result of css transitions or similar
 * *el* - Reference to the layer's DOM node
 
-### `oLayersNew`
+### `oLayers.new`
 
 This should be fired whenever a new layer is added to the page. 
 
-### `oLayersClosed`
+### `oLayers.close`
 
 This should be fired whenever a layer is removed from the page
 
-### `oLayersCloseAll`
+### `oLayers.closeAll`
 
 This should be fired to close all layers within a given context
 
@@ -43,5 +43,5 @@ This should be fired to close all layers within a given context
 
 Any module which controls one or more layers must implement the following patterns
 
-* Listen for the events `oLayersNew` and `oLayersCloseAll` on the layer context of each of its layers and react to these events by closing any layers it owns which share the same context
+* Listen for the events `oLayers.new` and `oLayers.closeAll` on the layer context of each of its layers and react to these events by closing any layers it owns which share the same context
 
