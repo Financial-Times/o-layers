@@ -5,7 +5,7 @@ This module provides a namespace for managing modules that make use of the z-axi
 ## Terminology
 
 * **Layer** refers to the owned DOM, or portion of owned DOM, of any module that makes use of the z-axis
-* **Layer context** refers to an area of the DOM defining a context for layers (as defined below under `o-layers__classes`)
+* **Layer context** refers to an area of the DOM defining a context for layers (as defined below under `o-layers__context`)
 
 ## Classes
 
@@ -15,33 +15,36 @@ This class should be added to any element which defines an area where every laye
 
 A layer must either
 
-* be a descendant of an element with the class `o-layers__context` and *must not* overlap any part of the page not contained within this element
+* be a descendant of an element with the class `o-layers__context` and *should not* overlap any part of the page not contained within this element
 * not be a descendant of any element with the class `o-layers__context` (in which case `document.body` provides the default layer context)
+ 
+In general a new layer context should only be defined if you are very sure any layers it contains will never interfere (either through directly overlapping or by leaving a distracting, no longer needed UI element) with anything outside of it.
+
+All layer contexts (with the exception of `document.body`) *should* have the following css properties defined (`o-layers` does not provide sass for this as there is considerable variation in acceptable values)
+
+* `position` - *must* not be `static`
+* `z-index` - *must* be `0` or higher (this mitigates problems with z-index of layers in nested layer contexts)
 
 ## Events
 
-The following custom events *must* be fired on a layer's closest ancestor with the class `o-layers__context`, or on `document.body` if such an element doesn't exist. The `Event.details` property define all the properties from the list below that are truthy for the given layer
+The following custom events *must* be fired on a layer's closest ancestor with the class `o-layers__context` (or on `document.body` if no such element exists). The `Event.details` property must define all the properties from the list below that are truthy for the given layer
 
-* *zIndex* - the css z-index of the layer
-* *transform* - Array of css transforms being applied to the layer
-* *animationDelay* - Any delay between firing the event and cmpletion of the layer's state change as a result of css transitions or similar
 * *el* - Reference to the layer's DOM node
 
 ### `oLayers.new`
 
-This should be fired whenever a new layer is added to the page, immediately *before* it is added to the DOM/displayed. 
+This should be fired immediately *before* any layer is added to the DOM/displayed. 
 
 ### `oLayers.closed`
 
-This should be fired whenever a layer is removed from the page, immediately *after* it is removed from the DOM/hidden.
-
-### `oLayers.closeAll`
-
-This should be fired to close all layers within a given context
+This should be fired immediately *after* any layer is removed from the DOM/hidden.
 
 ## Coding conventions
 
-Any module which controls one or more layers must implement the following patterns
+Any module which controls one or more layers *must* implement the following patterns:
 
-* Listen for the events `oLayers.new` and `oLayers.closeAll` on the layer context of each of its layers and react to these events by closing any layers it owns which share the same context
+* Listen for the event `oLayers.new` on the layer context of each of its layers and react to these events by either:
+
+    1. closing the layer
+    2. inspecting the new layer's owned DOM to determine what action should be taken.
 
