@@ -31,7 +31,7 @@ The following custom events *must* be fired on a layer's closest ancestor with t
 
 This should be fired whenever a new layer is added to the page, immediately *before* it is added to the DOM/displayed. 
 
-### `oLayers.closed`
+### `oLayers.close`
 
 This should be fired whenever a layer is removed from the page, immediately *after* it is removed from the DOM/hidden.
 
