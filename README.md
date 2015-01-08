@@ -56,8 +56,5 @@ Any module which controls one or more layers *must* implement the following patt
 
 * Listen for the event `oLayers.new` on the layer context of each of its layers and react to these events by either:
 
-    1. closing the layer
-    2. inspecting the new layer's owned DOM to determine what action should be taken.
-
-
-
+	1. closing the layer
+	2. inspecting the new layer's owned DOM to determine what action should be taken.
