@@ -13,14 +13,16 @@ A *Layer context* refers to a HTML element where every layer lying within it sho
 
 `document.body` is the default layer context.
 
-### `o-layers__context` class
+### `data-o-layers-context` data attribute
 
-This class should be added to any element (other than `document.body`) which needs to behave as a layer context. All *layers* must either
+This data attribute should be added to any element (other than `document.body`) which needs to behave as a layer context. All *layers* must either
 
-* be a descendant of an element with the class `o-layers__context` and *should not* overlap any part of the page not contained within this element
-* not be a descendant of any element with the class `o-layers__context` (in which case `document.body` provides the default layer context)
+* be a descendant of an element with the data attribute `data-o-layers-context` and *should not* overlap any part of the page not contained within this element
+* not be a descendant of any element with the data attribute `data-o-layers-context` (in which case `document.body` provides the default layer context)
 
 In general a new layer context should only be defined if you are very sure any layers it contains will never interfere (either through directly overlapping or by leaving a distracting, no longer needed UI element) with anything outside of it.
+
+__Note: The `o-layers__context` class is deprecated, please use the data attribute `data-o-layers-context`.__
 
 ### CSS
 
@@ -36,7 +38,7 @@ All layer contexts (with the exception of `document.body`) *should* have the fol
  
 ## Events
 
-The following custom events *must* be fired on a layer's closest ancestor with the class `o-layers__context` (or on `document.body` if no such element exists). The `Event.details` property must define all the properties from the list below that are truthy for the given layer
+The following custom events *must* be fired on a layer's closest ancestor with the data attribute `data-o-layers-context` (or on `document.body` if no such element exists). The `Event.details` property must define all the properties from the list below that are truthy for the given layer
 
 * *el* - Reference to the layer's DOM node
 
