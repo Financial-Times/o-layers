@@ -56,3 +56,11 @@ Any module which controls one or more layers *must* implement the following patt
 
 	1. closing the layer
 	2. inspecting the new layer's owned DOM to determine what action should be taken.
+
+----
+
+## License
+
+Copyright (c) 2015 Financial Times Ltd. All rights reserved.
+
+This software is published under the [MIT licence](http://opensource.org/licenses/MIT).
