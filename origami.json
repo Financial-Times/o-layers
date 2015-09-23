@@ -2,6 +2,6 @@
 	"description": "Namespace for managing modules that make use of the z-axis",
 	"origamiType": "module",
 	"origamiVersion": 1,
-	"support": "rhys.evans@ft.com",
-	"supportStatus": "experimental"
+	"support": "https://github.com/Financial-Times/o-layers/issues",
+	"supportStatus": "active"
 }
