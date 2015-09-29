@@ -1,4 +1,4 @@
-/*global module*/
+/*eslint-env node*/
 
 const BowerPlugin = require('bower-webpack-plugin');
 const path = require('path');
