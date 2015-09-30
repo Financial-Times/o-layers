@@ -1,5 +1,8 @@
-/*global module*/
-'use strict';
+/*eslint-env node*/
+
+const BowerPlugin = require('bower-webpack-plugin');
+const path = require('path');
+const cwd = process.cwd();
 
 module.exports = function(config) {
 	config.set({
@@ -10,7 +13,14 @@ module.exports = function(config) {
 
 		// frameworks to use
 		// available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-		frameworks: ['mocha', 'browserify'],
+		frameworks: ['mocha'],
+
+
+		plugins: [
+			'karma-mocha',
+			'karma-phantomjs-launcher',
+			'karma-webpack'
+		],
 
 
 		// list of files / patterns to load in the browser
@@ -28,7 +38,7 @@ module.exports = function(config) {
 		// preprocess matching files before serving them to the browser
 		// available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 		preprocessors: {
-			'test/*.test.js': ['browserify']
+			'test/*.test.js': ['webpack']
 		},
 
 
@@ -64,9 +74,33 @@ module.exports = function(config) {
 		// if true, Karma captures browsers, runs the tests and exits
 		singleRun: true,
 
-		browserify: {
-			debug: true,
-			transform: [ 'debowerify' ]
+		webpack: {
+			quiet: true,
+			module: {
+				loaders: [
+					{
+						test: /\.js$/,
+						exclude: /node_modules/,
+						loaders: [
+							'babel?optional[]=runtime',
+							'imports?define=>false'
+						]
+					}
+				]
+			},
+			resolve: {
+				root: [path.join(cwd, 'bower_components')]
+			},
+			plugins: [
+				new BowerPlugin({
+					includes:  /\.js$/
+				})
+			]
+		},
+
+		// Hide webpack output logging
+		webpackMiddleware: {
+			noInfo: true
 		}
 
 	});

@@ -1,6 +1,4 @@
-'use strict';
-
-var dom = require('o-dom');
+const dom = require('o-dom');
 
 module.exports = {
 	getLayerContext: function (el) {
