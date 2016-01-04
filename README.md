@@ -61,6 +61,6 @@ Any module which controls one or more layers *must* implement the following patt
 
 ## License
 
-Copyright (c) 2015 Financial Times Ltd. All rights reserved.
+Copyright (c) 2016 Financial Times Ltd. All rights reserved.
 
 This software is published under the [MIT licence](http://opensource.org/licenses/MIT).
