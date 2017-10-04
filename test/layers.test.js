@@ -1,19 +1,18 @@
-/*global describe, it*/
-
-const expect = require('expect.js');
+/* eslint-env mocha */
 
 const oLayers = require('./../main.js');
+import proclaim from 'proclaim';
 
 describe('o-layers', function() {
 
 	it('#getLayerContext', function() {
 		const pElement = document.createElement('p');
 		document.body.appendChild(pElement);
-		expect(oLayers.getLayerContext(pElement)).to.be(document.body);
+		proclaim.deepEqual(oLayers.getLayerContext(pElement), document.body);
 		const divElement = document.createElement('div');
 		divElement.classList.add('o-layers__context');
 		divElement.appendChild(pElement);
 		document.body.appendChild(divElement);
-		expect(oLayers.getLayerContext(pElement)).to.be(divElement);
+		proclaim.deepEqual(oLayers.getLayerContext(pElement), divElement);
 	});
 });
