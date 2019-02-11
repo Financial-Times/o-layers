@@ -1,4 +1,4 @@
-# o-layers [![CircleCI](https://circleci.com/gh/Financial-Times/o-layers.png?style=shield&circle-token=53572740840f94b157619c8e5b4ecd175ced733a)](https://circleci.com/gh/Financial-Times/o-layers)
+# o-layers [![CircleCI](https://circleci.com/gh/Financial-Times/o-layers.png?style=shield&circle-token=53572740840f94b157619c8e5b4ecd175ced733a)](https://circleci.com/gh/Financial-Times/o-layers) [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](#licence)
 
 This module provides a namespace for managing modules that make use of the z-axis, providing events, css classes and coding conventions that modules *must* use to interact with other modules that use the z-axis
 
