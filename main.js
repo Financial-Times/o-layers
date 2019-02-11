@@ -1,7 +1,6 @@
-const dom = require('o-dom');
-
-module.exports = {
+export default {
 	getLayerContext: function (el) {
-		return dom.getClosestMatch(el, '.o-layers__context') || document.body;
+		el = el || document.body;
+		return el.closest('.o-layers__context');
 	}
 };
