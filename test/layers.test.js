@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 
 const oLayers = require('./../main.js');
-import proclaim from 'proclaim';
+const proclaim = require('proclaim');
 
 describe('o-layers', function() {
 
