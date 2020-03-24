@@ -1,4 +1,4 @@
-export let getLayerContext = function (el) {
+export const getLayerContext = function (el) {
 	return el.closest('.o-layers__context') || document.body;
 };
 
