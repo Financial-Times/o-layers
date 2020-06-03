@@ -9,7 +9,7 @@ A *Layer* refers to the owned DOM, or portion of owned DOM, of any module that m
 
 ### Layer context
 
-A *Layer context* refers to a HTML element where every layer lying within it should only be concerned with other layers if they also lie within it. e.g. Within an interactive graphic any popups only need concern themselves with the state of other popups which also overlay the same graphic; they can safely disregard popups overlaying a different graphic. 
+A *Layer context* refers to a HTML element where every layer lying within it should only be concerned with other layers if they also lie within it. e.g. Within an interactive graphic any popups only need concern themselves with the state of other popups which also overlay the same graphic; they can safely disregard popups overlaying a different graphic.
 
 `document.body` is the default layer context.
 
@@ -33,7 +33,7 @@ All layer contexts (with the exception of `document.body`) *should* have the fol
 
 `oLayers#getLayerContext(el)` will return the given element's layer context.
 
- 
+
 ## Events
 
 The following custom events *must* be fired on a layer's closest ancestor with the class `o-layers__context` (or on `document.body` if no such element exists). The `Event.details` property must define all the properties from the list below that are truthy for the given layer
@@ -42,7 +42,7 @@ The following custom events *must* be fired on a layer's closest ancestor with t
 
 ### `oLayers.new`
 
-This should be fired immediately *before* any layer is added to the DOM/displayed. 
+This should be fired immediately *before* any layer is added to the DOM/displayed.
 
 ### `oLayers.close`
 
@@ -53,13 +53,12 @@ This should be fired immediately *after* any layer is removed from the DOM/hidde
 Any module which controls one or more layers *must* implement the following patterns:
 
 * Listen for the event `oLayers.new` on the layer context of each of its layers and react to these events by either:
-
 	1. closing the layer
 	2. inspecting the new layer's owned DOM to determine what action should be taken.
 
 ----
 
-## License
+## Licence
 
 Copyright (c) 2016 Financial Times Ltd. All rights reserved.
 
