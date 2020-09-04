@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 /* global proclaim */
 
-import oLayers from './../main.js';
+import oLayers from './../main.js.js';
 
 describe('o-layers', function() {
 
