@@ -1,6 +1,6 @@
 {
     "name": "@financial-times/o-layers",
-    "version": "100.0.0-7",
+    "version": "100.0.0-8",
     "description": "Namespace for managing modules that make use of the z-axis",
     "license": "MIT",
     "type": "module",
