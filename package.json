@@ -1,6 +1,6 @@
 {
   "name": "@financial-times/o-layers",
-  "version": "100.0.0-10",
+  "version": "100.0.0-11",
   "description": "Namespace for managing modules that make use of the z-axis",
   "keywords": [],
   "homepage": "https://github.com/Financial-Times/o-layers#readme",
