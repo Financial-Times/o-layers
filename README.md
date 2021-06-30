@@ -1,5 +1,7 @@
 # o-layers [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](#licence)
 
+_Deprecated: This component was not widely used and therefore did not meet its aim of managing the z-index between components and projects. There is no direct replacement for `o-layers`. Instead fire component specific events to indicate that a new "layer" such as an overlay has been opened._
+
 This module provides a namespace for managing modules that make use of the z-axis, providing events, css classes and coding conventions that modules *must* use to interact with other modules that use the z-axis
 
 ## Usage
